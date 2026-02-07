@@ -1,16 +1,16 @@
 # Titel der Website
 title: Your Health Snapshot
 
-# Nutze dein Theme-Repo als Remote Theme
-remote_theme: HealthSolutionsHub/Minimal-Mistakes-Thema@main
+# Remote Theme korrekt mit exaktem Repo-Namen
+remote_theme: HealthSolutionsHub/Minimal_Mistakes_Thema@main
 
-# Beschreibung der Website (optional)
+# Beschreibung der Website
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 
-# Basis-URL für GitHub Pages, leer lassen, wenn Repository-Name gleich Benutzername ist
+# Basis-URL für GitHub Pages
 baseurl: ""
 
-# URL der Website (GitHub Pages)
+# URL der Website
 url: "https://HealthSolutionsHub.github.io/YourHealthSnapshot"
 
 # Markdown Einstellungen
