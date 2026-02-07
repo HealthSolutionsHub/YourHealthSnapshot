@@ -1,5 +1,8 @@
 ---
 layout: home
-title: "Willkommen auf HealthSolutionHub"
+title: "Willkommen bei YourHealthSnapshot"
+permalink: /
 ---
-Hier kommt dein Startseiteninhalt hin.
+# Willkommen
+
+Dies ist deine Startseite. Du kannst hier Texte, Bilder oder Links zu Unterseiten hinzufügen.
