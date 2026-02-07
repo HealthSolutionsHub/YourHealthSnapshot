@@ -1,10 +1,10 @@
 # Titel der Website
 title: Your Health Snapshot
 
-# Theme: Name des Theme-Repository
-theme: minimal-mistakes-jekyll
+# Nutze dein Theme-Repo als Remote Theme
+remote_theme: HealthSolutionsHub/Minimal-Mistakes-Thema@main
 
-# Beschreibung (optional)
+# Beschreibung der Website (optional)
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 
 # Basis-URL für GitHub Pages, leer lassen, wenn Repository-Name gleich Benutzername ist
@@ -13,12 +13,12 @@ baseurl: ""
 # URL der Website (GitHub Pages)
 url: "https://HealthSolutionsHub.github.io/YourHealthSnapshot"
 
-# Markdown-Einstellungen
+# Markdown Einstellungen
 markdown: kramdown
 
-# Navigation
+# Navigation für Seiten
 nav:
   - title: Startseite
     url: /
   - title: Fragebogen
-    url: /questionnaire/   # <- hier nur Pfad zur Markdown-Seite
+    url: /questionnaire/
