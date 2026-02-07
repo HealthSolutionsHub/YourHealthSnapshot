@@ -4,25 +4,21 @@ title: Your Health Snapshot
 # Theme: Minimal Mistakes Jekyll Theme
 theme: minimal-mistakes-jekyll
 
-# Beschreibung der Website (optional)
+# Beschreibung (optional)
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 
-# Basis-URL (für GitHub Pages) - optional, wenn Repository name gleich Benutzername ist, kann leer bleiben
-baseurl: "" 
+# Basis-URL für GitHub Pages, leer lassen, wenn Repository name gleich Benutzername ist
+baseurl: ""
 
 # URL der Website (GitHub Pages)
-url: "https://HealthSolutionsHub.github.io"
+url: "https://HealthSolutionsHub.github.io/YourHealthSnapshot"
 
 # Markdown-Einstellungen
 markdown: kramdown
 
-# Navigation: Hier können zusätzliche Seiten wie 'questionnaire.md' eingebunden werden
-# Beispiel:
-#   - title: Fragebogen
-#     url: /questionnaire/
-#   - title: Startseite
-#     url: /
-
-# Output: Standardlayout für alle Seiten
-# index.md wird automatisch als Hauptseite genutzt
-# questionnaire.md als separate Seite verfügbar unter /questionnaire/
+# Navigation
+nav:
+  - title: Startseite
+    url: /
+  - title: Fragebogen
+    url: /questionnaire/
