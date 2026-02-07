@@ -1,22 +1,40 @@
 # Titel der Website
 title: Your Health Snapshot
 
-# Remote Theme korrekt mit exaktem Repo-Namen
-remote_theme: HealthSolutionsHub/Minimal_Mistakes_Thema@main
+# Theme lokal im Repository – wir haben es in den Content-Ordner kopiert
+# Keine Angabe von remote_theme nötig
+# Die Theme-Dateien liegen jetzt lokal (_layouts, _includes, _sass, assets)
+# Hinweis: Falls du später remote_theme wieder nutzen willst, kann man es wieder hinzufügen
+# remote_theme: HealthSolutionsHub/Minimal-Mistakes-Thema@main
 
-# Beschreibung der Website
+# Beschreibung der Website (optional)
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 
-# Basis-URL für GitHub Pages
+# Basis-URL (für GitHub Pages)
+# Wenn der Repository-Name nicht gleich deinem Benutzername ist, kann baseurl leer bleiben
 baseurl: ""
 
 # URL der Website
-url: "https://HealthSolutionsHub.github.io/YourHealthSnapshot"
+url: "https://HealthSolutionsHub.github.io"
 
-# Markdown Einstellungen
+# Markdown-Einstellungen
 markdown: kramdown
 
-# Navigation für Seiten
+# Layout-Standardeinstellungen
+# Alle Seiten nutzen das Standardlayout des Themes
+# index.md wird als Hauptseite genutzt
+# questionnaire.md als separate Seite verfügbar unter /questionnaire/
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single" # Nutzt das Standard-Layout des Themes für Seiten
+
+# Navigation: Hier kannst du zusätzliche Seiten einbinden
+# Beispiel für Menü: Startseite und Fragebogen
+# Die URLs stimmen mit dem permalink in den MD-Dateien überein
 nav:
   - title: Startseite
     url: /
