@@ -3,13 +3,12 @@ title: Health Questionnaire
 layout: page
 permalink: /questionnaire/
 header:
-  image: "/assets/images/questionnaire-header.jpg"   # eigenes Header-Bild einfügen
+  image: "/assets/images/questionnaire-header.jpg"
   overlay_color: "rgba(0,0,0,0.3)"
 ---
 
 ## Health Questionnaire
 
-<!-- Formular für die Erhebung der Patientendaten -->
 <form id="health-form">
 
   <div class="field">
@@ -101,8 +100,6 @@ header:
 
 </form>
 
----
-
 ## Choose Your Plan
 
 <div class="columns is-multiline is-variable is-8">
@@ -124,8 +121,6 @@ header:
   </div>
 
 </div>
-
----
 
 <script>
 document.getElementById('health-form').addEventListener('submit', async function(event) {
