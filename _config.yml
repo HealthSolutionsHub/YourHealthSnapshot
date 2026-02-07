@@ -1,18 +1,19 @@
-# ---------------------------
-# Minimaler Config für YourHealthSnapshot mit lokaler Minimal Mistakes Theme
-# ---------------------------
-
-title: Your Health Snapshot             # Название сайта
-description: Health questionnaire      # Краткое описание сайта
-
-url: "https://healthsolutionshub.github.io"  # GitHub Pages URL
-baseurl: "/YourHealthSnapshot"              # Путь к репозиторию на GitHub Pages
-
+title: Your Health Snapshot
+remote_theme: mmistakes/minimal-mistakes@4.24.0   # offizielle Version, kompatibel
+description: "Snapshot-Seite für Ihre Health-Lösung"
+baseurl: ""
+url: "https://HealthSolutionsHub.github.io"
 markdown: kramdown
 
-# Layout und Includes Pfade auf lokale Kopie der Theme setzen
 defaults:
   - scope:
-      path: ""       # Применяется ко всему репозиторию
+      path: ""
+      type: "pages"
     values:
-      layout: single # Используем layout 'single' для страниц
+      layout: "single"
+
+nav:
+  - title: Startseite
+    url: /
+  - title: Fragebogen
+    url: /questionnaire/
