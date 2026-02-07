@@ -1,42 +1,18 @@
-# Titel der Website
-title: Your Health Snapshot
+# ---------------------------
+# Minimaler Config für YourHealthSnapshot mit lokaler Minimal Mistakes Theme
+# ---------------------------
 
-# Theme lokal im Repository – wir haben es in den Content-Ordner kopiert
-# Keine Angabe von remote_theme nötig
-# Die Theme-Dateien liegen jetzt lokal (_layouts, _includes, _sass, assets)
-# Hinweis: Falls du später remote_theme wieder nutzen willst, kann man es wieder hinzufügen
-# remote_theme: HealthSolutionsHub/Minimal-Mistakes-Thema@main
+title: Your Health Snapshot             # Название сайта
+description: Health questionnaire      # Краткое описание сайта
 
-# Beschreibung der Website (optional)
-description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
+url: "https://healthsolutionshub.github.io"  # GitHub Pages URL
+baseurl: "/YourHealthSnapshot"              # Путь к репозиторию на GitHub Pages
 
-# Basis-URL (für GitHub Pages)
-# Wenn der Repository-Name nicht gleich deinem Benutzername ist, kann baseurl leer bleiben
-baseurl: ""
-
-# URL der Website
-url: "https://HealthSolutionsHub.github.io"
-
-# Markdown-Einstellungen
 markdown: kramdown
 
-# Layout-Standardeinstellungen
-# Alle Seiten nutzen das Standardlayout des Themes
-# index.md wird als Hauptseite genutzt
-# questionnaire.md als separate Seite verfügbar unter /questionnaire/
+# Layout und Includes Pfade auf lokale Kopie der Theme setzen
 defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
+  - scope:
+      path: ""       # Применяется ко всему репозиторию
     values:
-      layout: "single" # Nutzt das Standard-Layout des Themes für Seiten
-
-# Navigation: Hier kannst du zusätzliche Seiten einbinden
-# Beispiel für Menü: Startseite und Fragebogen
-# Die URLs stimmen mit dem permalink in den MD-Dateien überein
-nav:
-  - title: Startseite
-    url: /
-  - title: Fragebogen
-    url: /questionnaire/
+      layout: single # Используем layout 'single' для страниц
