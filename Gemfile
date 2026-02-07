@@ -1,5 +1,3 @@
-source "https://rubygems.org"
-
-gem "jekyll"
+gem "jekyll", "~> 4.4"
 gem "minimal-mistakes-jekyll"
 gem "jekyll-remote-theme"
