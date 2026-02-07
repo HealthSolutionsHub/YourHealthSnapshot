@@ -1,19 +1,59 @@
-title: Your Health Snapshot
-remote_theme: mmistakes/minimal-mistakes@4.24.0   # offizielle Version, kompatibel
-description: "Snapshot-Seite für Ihre Health-Lösung"
-baseurl: ""
+# ===========================
+# Your Health Snapshot Config
+# ===========================
+
+# Site info
+title: "Your Health Snapshot"
+description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
+baseurl: ""            # Leer, wenn GitHub Pages direkt auf Benutzer-URL
 url: "https://HealthSolutionsHub.github.io"
+
+# Markdown
 markdown: kramdown
 
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "single"
+# Theme: Remote Theme auf deine Version 4.18.0
+remote_theme: HealthSolutionsHub/Minimal_Mistakes_Thema@4.18.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-relative-links
 
+# Navigation
 nav:
   - title: Startseite
     url: /
   - title: Fragebogen
     url: /questionnaire/
+
+# Defaults (damit Seiten und posts richtig das Layout von Minimal Mistakes nutzen)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+
+# Build settings
+incremental: false
+lsi: false
+show_drafts: false
+
+# Optional: Exclude unnecessary files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
