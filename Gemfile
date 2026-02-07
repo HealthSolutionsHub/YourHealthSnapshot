@@ -1,3 +1,13 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4.1"
+gem "jekyll-seo-tag"
+gem "jekyll-feed"
+gem "jekyll-sitemap"
+gem "jekyll-remote-theme"
+gem "jekyll-coffeescript"
+gem "jekyll-commonmark-ghpages"
+gem "jekyll-relative-links"
 gem "jekyll", "~> 4.4"
 gem "minimal-mistakes-jekyll"
 gem "jekyll-remote-theme"
