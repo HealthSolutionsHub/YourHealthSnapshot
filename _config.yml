@@ -1,13 +1,13 @@
 # Titel der Website
 title: Your Health Snapshot
 
-# Theme: Minimal Mistakes Jekyll Theme
+# Theme: Name des Theme-Repository
 theme: minimal-mistakes-jekyll
 
 # Beschreibung (optional)
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 
-# Basis-URL für GitHub Pages, leer lassen, wenn Repository name gleich Benutzername ist
+# Basis-URL für GitHub Pages, leer lassen, wenn Repository-Name gleich Benutzername ist
 baseurl: ""
 
 # URL der Website (GitHub Pages)
@@ -21,4 +21,4 @@ nav:
   - title: Startseite
     url: /
   - title: Fragebogen
-    url: /questionnaire/
+    url: /questionnaire/   # <- hier nur Pfad zur Markdown-Seite
