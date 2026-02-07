@@ -1,6 +1,7 @@
 ---
 title: Health Questionnaire
 layout: single
+permalink: /questionnaire/
 ---
 
 ## Health Questionnaire
