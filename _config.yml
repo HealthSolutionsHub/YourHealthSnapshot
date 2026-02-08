@@ -94,7 +94,7 @@ plugins:
   - jekyll-coffeescript
   - jekyll-commonmark-ghpages
   - jekyll-relative-links
-  - jekyll-copy-assets
+  
 
 # Navigation
 nav:
@@ -128,9 +128,4 @@ exclude:
   - node_modules
   - vendor
 
-# ===========================
-# jekyll-copy-assets Config
-# ===========================
-copy_assets:
-  - "assets"
-  - "Minimal_Mistakes_Thema/assets/"
+
