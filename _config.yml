@@ -26,7 +26,8 @@ plugins:
   - jekyll-coffeescript
   - jekyll-commonmark-ghpages
   - jekyll-relative-links
-  - jekyll-copy-assets
+  
+
 
 # Navigation
 nav:
