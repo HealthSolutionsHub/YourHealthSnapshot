@@ -10,4 +10,5 @@ gem "jekyll-coffeescript"
 gem "jekyll-commonmark-ghpages"
 gem "jekyll-relative-links", "~> 0.7.0"
 gem "jekyll_remote_assets"
-gem "jekyll_theme_assets"
+gem "jekyll_assets"
+
