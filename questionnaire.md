@@ -1,6 +1,6 @@
 ---
 title: Health Questionnaire
-layout: single
+layout: single_op
 permalink: /questionnaire/
 header:
   image: "/assets/images/questionnaire-header.jpg"
