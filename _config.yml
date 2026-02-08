@@ -5,6 +5,74 @@
 # Site info
 title: "Your Health Snapshot"
 description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
+baseurl: ""             
+url: "https://HealthSolutionsHub.github.io"
+
+# Markdown
+markdown: kramdown
+
+# Theme
+remote_theme: HealthSolutionsHub/Minimal_Mistakes_Thema@4.18.0
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-relative-links
+  - jekyll-copy-assets
+
+# Navigation
+nav:
+  - title: Startseite
+    url: /
+  - title: Fragebogen
+    url: /questionnaire/
+
+# Defaults für Seiten und Posts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single_op"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+
+# Build settings
+incremental: false
+lsi: false
+show_drafts: false
+
+# Optional: Exclude unnecessary files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# ===========================
+# jekyll-copy-assets Config
+# ===========================
+copy_assets:
+  - "assets"
+  - "Minimal_Mistakes_Thema/assets/"
+# ===========================
+# Your Health Snapshot Config
+# ===========================
+
+# Site info
+title: "Your Health Snapshot"
+description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
 baseurl: ""             # Leer, wenn GitHub Pages direkt auf Benutzer-URL
 url: "https://HealthSolutionsHub.github.io"
 
