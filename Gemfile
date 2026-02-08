@@ -9,3 +9,5 @@ gem "jekyll-remote-theme"
 gem "jekyll-coffeescript"
 gem "jekyll-commonmark-ghpages"
 gem "jekyll-relative-links", "~> 0.7.0"
+gem "jekyll-copy-assets"
+
