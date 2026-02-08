@@ -26,6 +26,7 @@ plugins:
   - jekyll-coffeescript
   - jekyll-commonmark-ghpages
   - jekyll-relative-links
+  - jekyll-copy-assets      # << добавлен для копирования assets при сборке
 
 # Navigation
 nav:
@@ -36,14 +37,12 @@ nav:
 
 # Defaults für Seiten und Posts (damit Layout von Minimal Mistakes genutzt wird)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "single_op"
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
@@ -60,3 +59,9 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+
+# ===========================
+# jekyll-copy-assets Config
+# ===========================
+copy_assets:
+  - "assets"       # указываем папку assets для копирования в _site
