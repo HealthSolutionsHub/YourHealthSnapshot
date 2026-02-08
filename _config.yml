@@ -1,61 +1,25 @@
-# ===========================
-# Your Health Snapshot Config
-# ===========================
-
-# Site info
 title: "Your Health Snapshot"
-description: "Dies ist die Snapshot-Seite für Ihre Health-Lösung"
-baseurl: ""             
-url: "https://HealthSolutionsHub.github.io"
-icon: "/assets/images/YourHealthSnapshot_favicon.ico"
+email: your-email@example.com
+description: "Health dashboard powered by Jekyll"
+baseurl: "" # falls du die Seite auf Root hostest
+url: "http://localhost:4000"
 
-# Markdown
+theme: minimal-mistakes-jekyll
+
+# Minimal Mistakes Skin
+# skins: default, dark, contrast, cyberpunk, ...
+skin: default
+
+# Markdown & Permalinks
 markdown: kramdown
+kramdown:
+  input: GFM
+permalink: /:title/
 
-# Theme
-remote_theme: HealthSolutionsHub/Minimal_Mistakes_Thema@4.18.0
+# Sass settings
+sass:
+  style: compressed
 
-# Plugins
 plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-coffeescript
-  - jekyll-commonmark-ghpages
-  - jekyll-relative-links
-
-# Navigation
-nav:
-  - title: Startseite
-    url: /
-  - title: Fragebogen
-    url: /questionnaire/
-
-# Defaults für Seiten und Posts
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "single_op"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "single_op"
-
-# Build settings
-incremental: false
-lsi: false
-show_drafts: false
-
-# Optional: Exclude unnecessary files from build
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+  - jekyll-seo-tag
