@@ -27,6 +27,8 @@ plugins:
   - jekyll-commonmark-ghpages
   - jekyll-relative-links
   - jekyll-copy-assets      # << добавлен для копирования assets при сборке
+  copy_assets:
+  -Minimal_Mistakes_Thema/assets/
 
 # Navigation
 nav:
