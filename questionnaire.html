@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Health Questionnaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Optional: simples Styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: url("/assets/images/questionnaire-header.jpg") center/cover no-repeat;
+      padding: 60px 20px;
+      color: white;
+      text-align: center;
+      background-color: rgba(0,0,0,0.3);
+      background-blend-mode: darken;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .plans {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .plan {
+      flex: 1;
+      min-width: 240px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .plan h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Health Questionnaire</h1>
+</header>
+
+<main>
+
+  <form id="health-form">
+
+    <div class="field">
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" required />
+    </div>
+
+    <div class="field">
+      <label for="country">Country</label>
+      <input type="text" id="country" required />
+    </div>
+
+    <div class="field">
+      <label for="age_group">Age Group</label>
+      <select id="age_group" required>
+        <option value="">Bitte wählen</option>
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-44</option>
+        <option>45-54</option>
+        <option>55+</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="sex">Sex</label>
+      <select id="sex" required>
+        <option value="">Bitte wählen</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="height">Height (cm)</label>
+      <input type="number" id="height" required />
+    </div>
+
+    <div class="field">
+      <label for="weight">Weight (kg)</label>
+      <input type="number" id="weight" required />
+    </div>
+
+    <div class="field">
+      <label for="smoking">Smoking (0 = No, 1 = Yes)</label>
+      <input type="number" id="smoking" min="0" max="1" required />
+    </div>
+
+    <div class="field">
+      <label for="alcohol">Alcohol (0 = No, 1 = Yes)</label>
+      <input type="number" id="alcohol" min="0" max="1" required />
+    </div>
+
+    <div class="field">
+      <label for="activity">Physical Activity (hours/week)</label>
+      <input type="number" id="activity" required />
+    </div>
+
+    <div class="field">
+      <label for="life_expectancy">Healthy Life Expectancy (years)</label>
+      <input type="number" id="life_expectancy" required />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <section class="plans">
+    <div class="plan">
+      <h3>Standard</h3>
+      <p>Digitale Empfehlungen + PDF</p>
+      <a href="/subscribe/standard">Start Standard</a>
+    </div>
+
+    <div class="plan">
+      <h3>Premium</h3>
+      <p>Erweiterte Analysen + Visualisierungen + PDF</p>
+      <a href="/subscribe/premium">Upgrade to Premium</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+document.getElementById("health-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    Email: email.value,
+    Country: country.value,
+    Age_group: age_group.value,
+    Sex: sex.value,
+    Height_cm: Number(height.value),
+    Weight_kg: Number(weight.value),
+    Smoking: Number(smoking.value),
+    Alcohol: Number(alcohol.value),
+    Physical_Activity: Number(activity.value),
+    Healthy_Life_Expectancy: Number(life_expectancy.value)
+  };
+
+  try {
+    const res = await fetch("https://dein-render-api-url/recommendations/compact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    alert("Token: " + (result.token ?? "n/a") + "\n\n" + result.recommendation_text);
+  } catch (err) {
+    alert("Fehler beim Senden der Daten");
+    console.error(err);
+  }
+});
+</script>
+
+</body>
+</html>
