@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health Solutions Hub – Page Title</title>
+  <title>Health Solutions Hub – Home</title>
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 70px;
+      padding-top: 80px;
     }
 
     /* NAVBAR */
@@ -40,8 +40,13 @@
     }
 
     .navbar-brand img {
-      height: 100px;
+      height: 60px; /* Desktop */
       width: auto;
+    }
+    @media (max-width: 768px){
+      .navbar-brand img {
+        height: 45px; /* Mobile */
+      }
     }
 
     .navbar a.nav-link {
@@ -50,13 +55,16 @@
       margin-left: 1rem;
     }
 
-    .navbar a.nav-link:hover,
-    .navbar a.nav-link.active {
+    .navbar a.nav-link:hover {
       color: var(--green-accent);
-      pointer-events: none; /* aktuelle Seite nicht klickbar */
     }
 
-    /* Hamburger Icon anpassen */
+    .navbar a.nav-link.active {
+      color: var(--green-accent);
+      pointer-events: none; /* aktueller Link nicht klickbar */
+    }
+
+    /* Hamburger Icon */
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
@@ -64,12 +72,12 @@
     /* MAIN CONTENT */
     .main-content {
       min-height: 70vh;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .main-content h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 600;
       margin-bottom: 25px;
     }
@@ -82,7 +90,7 @@
       opacity: 0.9;
     }
 
-    .btn-primary, .support-btn {
+    .btn-primary {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
@@ -96,7 +104,7 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn-primary:hover, .support-btn:hover {
+    .btn-primary:hover {
       background-color: #5fbf86;
     }
 
@@ -149,10 +157,9 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Support</a></li>
-        <!-- füge hier weitere Seiten hinzu -->
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
       </ul>
     </div>
   </div>
@@ -161,10 +168,14 @@
 <!-- MAIN CONTENT -->
 <section class="main-content">
   <div class="container">
-    <h1>Page Heading</h1>
-    <p>Take this quick health assessment to discover your key health indicators and get personalized insights. Start with simple calculations like BMI, and explore more detailed results with the premium option. Learn more about the evidence and statistics behind this assessment in our References.
-This assessment does not replace medical consultation, but helps you find qualified specialists associated with recognized medical societies in your country. Your answers are private and secure.</p>
-    <a href="#action" class="btn-primary">Primary Action</a>
+    <h1>Take this quick health assessment</h1>
+    <p>
+      Take this quick health assessment to discover your key health indicators and get personalized insights. Start with simple calculations like BMI, and explore more detailed results with the premium option. Learn more about the evidence and statistics behind this assessment in our References.
+    </p>
+    <p>
+      This assessment does not replace medical consultation, but helps you find qualified specialists associated with recognized medical societies in your country. Your answers are private and secure.
+    </p>
+    <a href="#start" class="btn-primary">Start Assessment</a>
   </div>
 </section>
 
