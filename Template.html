@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 70px;
+      padding-top: 100px; /* Platz für Header */
     }
 
     /* NAVBAR */
@@ -50,31 +50,33 @@
       margin-left: 1rem;
     }
 
-    .navbar a.nav-link:hover,
+    .navbar a.nav-link:hover {
+      color: var(--green-accent);
+    }
+
     .navbar a.nav-link.active {
       color: var(--green-accent);
       pointer-events: none; /* aktuelle Seite nicht klickbar */
     }
 
-    /* Hamburger Icon anpassen */
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 
     /* MAIN CONTENT */
-    .main-content {
+    section.main-content {
       min-height: 70vh;
       padding: 80px 20px;
       text-align: center;
     }
 
-    .main-content h1 {
+    section.main-content h1 {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 25px;
     }
 
-    .main-content p {
+    section.main-content p {
       font-size: 1.1rem;
       line-height: 1.7;
       max-width: 700px;
@@ -151,8 +153,8 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Support</a></li>
-        <!-- füge hier weitere Seiten hinzu -->
+        <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+        <!-- weitere Seiten hier -->
       </ul>
     </div>
   </div>
@@ -161,8 +163,8 @@
 <!-- MAIN CONTENT -->
 <section class="main-content">
   <div class="container">
-    <h1>Page Heading</h1>
-    <p>This is the main content for this page. Replace this text with your page-specific content.</p>
+    <h1><!-- HIER SEITENTITEL -->Page Heading</h1>
+    <p><!-- HIER HAUPTTEXT -->Main content placeholder. Replace this text for each page.</p>
     <a href="#action" class="btn-primary">Primary Action</a>
   </div>
 </section>
