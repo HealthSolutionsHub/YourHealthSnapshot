@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 100px; /* Platz für Header */
+      padding-top: 100px;
     }
 
     /* NAVBAR */
@@ -54,11 +54,6 @@
       color: var(--green-accent);
     }
 
-    .navbar a.nav-link.active {
-      color: var(--green-accent);
-      pointer-events: none; /* aktuelle Seite nicht klickbar */
-    }
-
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
@@ -79,12 +74,12 @@
     section.main-content p {
       font-size: 1.1rem;
       line-height: 1.7;
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto 20px;
       opacity: 0.9;
     }
 
-    .btn-primary, .support-btn {
+    .btn-primary {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
@@ -98,7 +93,7 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn-primary:hover, .support-btn:hover {
+    .btn-primary:hover {
       background-color: #5fbf86;
     }
 
@@ -152,9 +147,8 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
         <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
-        <!-- weitere Seiten hier -->
+        <!-- About-Link ist entfernt, weil wir gerade auf About-Seite sind -->
       </ul>
     </div>
   </div>
