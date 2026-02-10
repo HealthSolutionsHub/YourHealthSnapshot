@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Solutions Hub</title>
+
+  <!-- Favicon: Symbol links in der Browser-Registerkarte -->
+  <link rel="icon" href="/assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    /* Цвета бренда */
+    /* Markenfarben */
     :root {
-      --primary-color: #90ee90; /* светло-зелёный */
-      --secondary-color: #add8e6; /* светло-синий */
+      --primary-color: #90ee90; /* hellgrün */
+      --secondary-color: #add8e6; /* hellblau */
     }
 
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
+      padding-top: 70px; /* Platz für fixe Navbar */
     }
 
-    /* Header */
+    /* Header / Navbar */
     .navbar {
       background-color: var(--primary-color);
     }
@@ -28,6 +34,12 @@
     }
     .navbar a.nav-link:hover {
       color: var(--secondary-color);
+    }
+
+    /* Logo in der Navbar */
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
     }
 
     /* Footer */
@@ -45,32 +57,37 @@
       color: var(--primary-color);
     }
 
-    /* Контент */
+    /* Hauptinhalt */
     .main-content {
       min-height: 70vh;
       padding: 60px 15px;
       text-align: center;
     }
 
+    /* Social Media Icons */
     .social-icons i {
       font-size: 1.5rem;
       margin: 0 10px;
     }
   </style>
-  <!-- Font Awesome для иконок соцсетей -->
+
+  <!-- Font Awesome für Social Media Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg">
+  <!-- Fixierte Header / Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="logo.svg" alt="Health Solutions Hub" height="40">
+      <!-- Logo links, klickbar, führt zur Startseite -->
+      <a class="navbar-brand" href="home.html">
+        <img src="/assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
       </a>
+      <!-- Hamburger-Menü für mobile Ansicht -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Navigationslinks -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
@@ -82,10 +99,10 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Hauptinhalt -->
   <div class="main-content">
     <h1>Welcome to Health Solutions Hub</h1>
-    <p>Here will be your interactive form and content.</p>
+    <p>Hier wird dein interaktives Formular und Inhalt stehen.</p>
   </div>
 
   <!-- Footer -->
@@ -99,7 +116,7 @@
     <div>
       <a href="terms.html">Terms & Legal</a>
     </div>
-    <div>© 2006 Health Solutions Hub. All rights reserved.</div>
+    <div>© 2006 Health Solutions Hub. Alle Rechte vorbehalten.</div>
   </footer>
 
   <!-- Bootstrap JS -->
