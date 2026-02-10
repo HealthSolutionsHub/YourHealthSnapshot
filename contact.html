@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health Solutions Hub - Support</title>
+  <title>Health Solutions Hub – Support</title>
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
@@ -30,56 +30,59 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 80px; /* Platz für Navbar */
+      padding-top: 70px; /* Header-Höhe berücksichtigen */
     }
 
     /* NAVBAR */
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      padding: 0.5rem 0.5rem;
     }
 
     .navbar-brand img {
-      max-height: 100px;
+      height: 100px; /* Logo 100px */
       width: auto;
     }
 
-    .navbar-nav .nav-link {
+    .navbar a.nav-link {
       color: var(--text-dark);
       font-weight: 500;
+      margin-left: 1rem;
     }
 
-    .navbar-nav .nav-link:hover {
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link.active {
       color: var(--green-accent);
     }
 
-    /* SUPPORT CONTENT */
-    .support-content {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* Hamburger Icon anpassen */
+    .navbar-light .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* SUPPORT SECTION */
+    .support-section {
+      background-color: var(--green-soft);
+      padding: 100px 20px;
       text-align: center;
-      padding: 50px 20px;
-      flex-direction: column;
     }
 
-    .support-content h1 {
-      font-size: 2rem;
+    .support-section h1 {
+      font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 25px;
     }
 
-    .support-content p {
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin-bottom: 1rem;
-      line-height: 1.6;
+    .support-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 20px;
       opacity: 0.9;
     }
 
     .support-btn {
+      display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
       font-size: 1rem;
@@ -114,6 +117,10 @@
       color: var(--green-accent);
     }
 
+    .social-icons {
+      margin-bottom: 10px;
+    }
+
     .social-icons i {
       font-size: 1.4rem;
       margin: 0 12px;
@@ -128,8 +135,8 @@
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
@@ -141,23 +148,25 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <!-- Aktuelle Seite (Support) wird nicht angezeigt -->
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <!-- Support-Seite ist aktuell, daher kein Link -->
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- SUPPORT CONTENT -->
-<div class="support-content">
-  <h1>Have a question about our products?</h1>
-  <p>Start by asking our digital assistant — it’s ready to help you instantly.</p>
-  <p>If the assistant cannot provide an answer, it will kindly ask you to enter your email address. Your question will then be securely forwarded to one of our specialists, who will get in touch with you directly via the email you provided.</p>
-  <p>Our digital assistant handles general inquiries quickly, while our support team ensures that any questions requiring expert attention are answered personally and efficiently.</p>
-  <p>We respect your privacy: your email is used only for communication regarding your question and will not be shared or stored for any other purpose.</p>
-  <a href="#digital-assistant" class="support-btn">Ask our Assistant</a>
-</div>
+<section class="support-section">
+  <div class="container">
+    <h1>Have a question about our products?</h1>
+    <p>Start by asking our digital assistant — it’s ready to help you instantly.</p>
+    <p>If the assistant cannot provide an answer, it will kindly ask you to enter your email address. Your question will then be securely forwarded to one of our specialists, who will get in touch with you directly via the email you provided.</p>
+    <p>Our digital assistant handles general inquiries quickly, while our support team ensures that any questions requiring expert attention are answered personally and efficiently.</p>
+    <p>We respect your privacy: your email is used only for communication regarding your question and will not be shared or stored for any other purpose.</p>
+    <a href="#digital-assistant" class="btn support-btn">Ask our Assistant</a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
