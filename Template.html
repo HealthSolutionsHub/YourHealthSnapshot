@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 70px; /* Platz für fixe Navbar */
+      padding-top: 80px; /* Platz für fixe Navbar */
     }
 
     /* NAVBAR */
@@ -50,9 +50,16 @@
 
     .navbar-brand img {
       height: auto;
-      max-height: 70px; /* maximal sichtbare Höhe, Header bleibt kompakt */
+      max-height: 150px; /* größtes mögliches Logo */
       width: auto;
       display: block;
+    }
+
+    /* Responsive Logo: kleiner auf mobilen Geräten */
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        max-height: 70px; /* Logo passt auf Handy */
+      }
     }
 
     .navbar a.nav-link {
@@ -135,4 +142,18 @@
 <body>
 
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg fix
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a
