@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 70px; /* Platz für Header */
+      padding-top: 80px; /* Platz für Navbar */
     }
 
     /* NAVBAR */
@@ -40,43 +40,45 @@
     }
 
     .navbar-brand img {
-      height: 100 px; /* Header-Logo wie im Beispiel */
+      max-height: 100px;
       width: auto;
     }
 
-    .navbar a.nav-link {
+    .navbar-nav .nav-link {
       color: var(--text-dark);
       font-weight: 500;
-      margin-left: 1rem;
     }
 
-    .navbar a.nav-link:hover {
+    .navbar-nav .nav-link:hover {
       color: var(--green-accent);
     }
 
     /* SUPPORT CONTENT */
     .support-content {
       min-height: 70vh;
-      padding: 90px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 50px 20px;
+      flex-direction: column;
     }
 
     .support-content h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .support-content p {
-      font-size: 1.1rem;
-      max-width: 640px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 1rem;
+      line-height: 1.6;
       opacity: 0.9;
     }
 
     .support-btn {
-      display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
       font-size: 1rem;
@@ -111,10 +113,6 @@
       color: var(--green-accent);
     }
 
-    .social-icons {
-      margin-bottom: 10px;
-    }
-
     .social-icons i {
       font-size: 1.4rem;
       margin: 0 12px;
@@ -129,7 +127,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -142,7 +140,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <!-- Support-Seite ausblenden -->
+        <!-- Aktuelle Seite wird nicht angezeigt -->
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
       </ul>
@@ -150,14 +148,14 @@
   </div>
 </nav>
 
-<!-- SUPPORT CONTENT -->
+<!-- SUPPORT MAIN CONTENT -->
 <div class="support-content">
-  <h1>Need Help or Have Questions?</h1>
+  <h1>Have a question about our products?</h1>
   <p>Start by asking our digital assistant — it’s ready to help you instantly.</p>
   <p>If the assistant cannot provide an answer, it will kindly ask you to enter your email address. Your question will then be securely forwarded to one of our specialists, who will get in touch with you directly via the email you provided.</p>
   <p>Our digital assistant handles general inquiries quickly, while our support team ensures that any questions requiring expert attention are answered personally and efficiently.</p>
   <p>We respect your privacy: your email is used only for communication regarding your question and will not be shared or stored for any other purpose.</p>
-  <a href="#digital-assistant" class="btn support-btn">Ask our Assistant</a>
+  <a href="#digital-assistant" class="support-btn">Ask our Assistant</a>
 </div>
 
 <!-- FOOTER -->
