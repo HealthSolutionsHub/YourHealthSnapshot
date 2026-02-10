@@ -30,7 +30,7 @@
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 80px;
+      padding-top: 70px; /* Header-Höhe berücksichtigen */
     }
 
     /* NAVBAR */
@@ -39,30 +39,25 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-     .navbar-brand img {
+    .navbar-brand img {
       height: 100px;
       width: auto;
     }
 
-    @media (max-width: 768px){
-      .navbar-brand img {
-        height: 45px; /* Mobile */
-      }
-    }
-
-    .navbar a.nav-link {
+    .navbar a.nav-link, .navbar span.nav-link {
       color: var(--text-dark);
       font-weight: 500;
       margin-left: 1rem;
     }
 
-    .navbar a.nav-link:hover {
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link.active,
+    .navbar span.nav-link.active {
       color: var(--green-accent);
     }
 
-    .navbar a.nav-link.active {
-      color: var(--green-accent);
-      pointer-events: none; /* aktueller Link nicht klickbar */
+    .navbar a.nav-link.active, .navbar span.nav-link.active {
+      pointer-events: none; /* aktuelle Seite nicht klickbar */
     }
 
     /* Hamburger Icon */
@@ -72,13 +67,13 @@
 
     /* MAIN CONTENT */
     .main-content {
-      min-height: 70vh;
-      padding: 60px 20px;
+      background-color: var(--green-soft);
+      padding: 100px 20px;
       text-align: center;
     }
 
     .main-content h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 25px;
     }
@@ -158,7 +153,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><span class="nav-link active">Home</span></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
       </ul>
@@ -169,14 +164,15 @@
 <!-- MAIN CONTENT -->
 <section class="main-content">
   <div class="container">
-    <h1>Take this quick health assessment</h1>
+    <h1>Welcome to Health Solutions Hub</h1>
     <p>
-      Take this quick health assessment to discover your key health indicators and get personalized insights. Start with simple calculations like BMI, and explore more detailed results with the premium option. Learn more about the evidence and statistics behind this assessment in our References.
-    </p>
-    <p>
+      Take this quick health assessment to discover your key health indicators and get personalized insights. 
+      Start with simple calculations like BMI, and explore more detailed results with the premium option. 
+      Learn more about the evidence and statistics behind this assessment in our References.
+      <br><br>
       This assessment does not replace medical consultation, but helps you find qualified specialists associated with recognized medical societies in your country. Your answers are private and secure.
     </p>
-    <a href="#start" class="btn-primary">Start Assessment</a>
+    <a href="#assessment" class="btn-primary">Start Assessment</a>
   </div>
 </section>
 
