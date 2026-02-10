@@ -40,7 +40,7 @@
     }
 
     .navbar-brand img {
-      height: 50px;
+      height: 50px; /* Höhe des Logos */
       width: auto;
     }
 
@@ -87,6 +87,45 @@
       background-color: #5fbf86;
     }
 
+    /* SUPPORT SECTION */
+    .support-section {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+      color: var(--text-dark);
+    }
+
+    .support-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .support-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .support-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 999px;
+      border: none;
+      background-color: var(--green-accent);
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .support-btn:hover {
+      background-color: #5fbf86;
+    }
+
     /* FOOTER */
     footer {
       background-color: #ffffff;
@@ -118,14 +157,47 @@
     .social-icons i:hover {
       opacity: 0.7;
     }
+  </style>
+</head>
 
-    /* SUPPORT SECTION */
-    .support-section {
-      background-color: #ffffff;
-      padding: 60px 20px;
-      font-family: "Inter", Arial, sans-serif;
-      color: #1f2933;
-    }
+<body>
 
-    .support-section .container {
-      max-width: 720p
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main-content">
+  <h1>Your Personal Health Snapshot</h1>
+  <p>
+    Answer a few short questions and receive an individual, data-based overview.
+    Secure, anonymous and designed with medical expertise.
+  </p>
+
+  <a href="#form" class="btn btn-primary">Start assessment</a>
+</div>
+
+<!-- SUPPORT SECTION -->
+<section class="support-section">
+  <div class="container">
+    <h2>Have a question about our products?</h2>
+    <p>Start by asking our digital assistant — it’s ready to help you instantly.</p>
+    <p>If the assistant cannot provide an answer, it will kindly ask you to enter your email address. Your question will then be securely forwarded to one of our specialists, who will get in touch with you directly via the email you provided.</p>
+    <p>Our digital assistant handles ge
