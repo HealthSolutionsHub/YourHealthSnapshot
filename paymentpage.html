@@ -7,7 +7,6 @@
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,61 +21,36 @@
       --green-accent: #6fcf97;
       --text-dark: #1f2933;
     }
-
     body {
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
       padding-top: 100px;
     }
-
     /* NAVBAR */
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
-
-    .navbar-brand img {
-      height: 100px;
-      width: auto;
-    }
-
+    .navbar-brand img { height: 100px; width: auto; }
     .navbar a.nav-link {
       color: var(--text-dark);
       font-weight: 500;
       margin-left: 1rem;
     }
-
-    .navbar a.nav-link:hover {
-      color: var(--green-accent);
-    }
-
-    .navbar a.nav-link.active {
-      color: var(--green-accent);
-      pointer-events: none;
-    }
-
+    .navbar a.nav-link:hover { color: var(--green-accent); }
     /* MAIN */
     section.main-content {
       min-height: 70vh;
       padding: 80px 20px;
       text-align: center;
     }
-
     section.main-content h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 25px;
+      font-size: 2.5rem; font-weight: 600; margin-bottom: 25px;
     }
-
     section.main-content p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      opacity: 0.9;
+      font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto 20px; opacity: 0.9;
     }
-
     .btn-primary {
       display: inline-block;
       margin: 10px;
@@ -90,27 +64,15 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-
-    .btn-primary:hover {
-      background-color: #5fbf86;
-    }
-
+    .btn-primary:hover { background-color: #5fbf86; }
     footer {
       background-color: #ffffff;
       padding: 35px 0;
       text-align: center;
       border-top: 1px solid rgba(0,0,0,0.05);
     }
-
-    footer a {
-      color: var(--text-dark);
-      margin: 0 12px;
-      font-size: 0.95rem;
-    }
-
-    footer a:hover {
-      color: var(--green-accent);
-    }
+    footer a { color: var(--text-dark); margin: 0 12px; font-size: 0.95rem; }
+    footer a:hover { color: var(--green-accent); }
   </style>
 </head>
 
@@ -122,17 +84,15 @@
     <a class="navbar-brand" href="index.html">
       <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
     </a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Payment</a></li>
+        <!-- PaymentPage не показывается в навигации -->
       </ul>
     </div>
   </div>
@@ -142,28 +102,19 @@
 <section class="main-content">
   <div class="container">
     <h1>Complete Your Health Analysis</h1>
-
     <p>
       You have successfully completed the questionnaire.
       To receive your full personalized health analysis report,
       please enter your email address and proceed with secure payment below.
     </p>
-
     <div class="mb-4">
       <input type="email" id="email" class="form-control w-50 mx-auto"
         placeholder="Enter your email address" required>
     </div>
-
     <div>
-      <button class="btn-primary" onclick="processPayment('stripe')">
-        Pay with Stripe
-      </button>
-
-      <button class="btn-primary" onclick="processPayment('paypal')">
-        Pay with PayPal
-      </button>
+      <button class="btn-primary" id="stripe-btn">Pay with Stripe</button>
+      <button class="btn-primary" id="paypal-btn">Pay with PayPal</button>
     </div>
-
     <p class="mt-4" style="font-size:0.9rem;">
       Your payment is securely encrypted. After successful transaction,
       your analysis will begin immediately.
@@ -181,17 +132,49 @@
   </div>
 </footer>
 
-<script>
-function processPayment(provider) {
-  const email = document.getElementById("email").value;
-  if (!email) {
-    alert("Please enter your email address.");
-    return;
-  }
+<!-- Stripe & PayPal Integration -->
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR"></script>
 
-  // TODO: Replace with real Stripe / PayPal integration
-  window.location.href = "success.html";
-}
+<script>
+const stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY"); // твой Stripe публичный ключ
+
+document.getElementById("stripe-btn").addEventListener("click", async () => {
+  const email = document.getElementById("email").value;
+  if(!email) { alert("Please enter your email address."); return; }
+
+  // Создание Stripe Checkout Session через backend
+  const response = await fetch("/create-stripe-session", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ email })
+  });
+  const data = await response.json();
+  stripe.redirectToCheckout({ sessionId: data.sessionId });
+});
+
+document.getElementById("paypal-btn").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  if(!email) { alert("Please enter your email address."); return; }
+
+  // PayPal Checkout
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: { value: '29.00' },
+          description: 'Your Health Snapshot',
+          custom_id: email
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        window.location.href = "success.html?email=" + encodeURIComponent(email);
+      });
+    }
+  }).render('body'); // можно заменить на контейнер или просто вызвать сразу
+});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
