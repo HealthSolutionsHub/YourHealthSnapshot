@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Health Solutions Hub – Secure Payment</title>
 
+  <!-- Favicon -->
   <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
   <link rel="shortcut icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
 
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -27,8 +30,16 @@
       padding-top: 100px;
     }
 
-    .navbar { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
-    .navbar-brand img { height: 100px; width: auto; }
+    /* NAVBAR */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .navbar-brand img {
+      height: 100px;
+      width: auto;
+    }
 
     .navbar a.nav-link {
       color: var(--text-dark);
@@ -36,9 +47,16 @@
       margin-left: 1rem;
     }
 
-    .navbar a.nav-link:hover { color: var(--green-accent); }
-    .navbar a.nav-link.active { color: var(--green-accent); pointer-events: none; }
+    .navbar a.nav-link:hover {
+      color: var(--green-accent);
+    }
 
+    .navbar a.nav-link.active {
+      color: var(--green-accent);
+      pointer-events: none;
+    }
+
+    /* MAIN */
     section.main-content {
       min-height: 70vh;
       padding: 80px 20px;
@@ -73,7 +91,9 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn-primary:hover { background-color: #5fbf86; }
+    .btn-primary:hover {
+      background-color: #5fbf86;
+    }
 
     footer {
       background-color: #ffffff;
@@ -82,29 +102,51 @@
       border-top: 1px solid rgba(0,0,0,0.05);
     }
 
-    footer a { color: var(--text-dark); margin: 0 12px; font-size: 0.95rem; }
-    footer a:hover { color: var(--green-accent); }
+    footer a {
+      color: var(--text-dark);
+      margin: 0 12px;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
+      color: var(--green-accent);
+    }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
     </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Payment</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
+<!-- MAIN CONTENT -->
 <section class="main-content">
   <div class="container">
-    <h1>Complete Your Purchase</h1>
+    <h1>Complete Your Health Analysis</h1>
 
     <p>
-      Please enter your email address below to receive your personalized
-      health analysis. After successful payment, your project will be
-      automatically processed.
+      You have successfully completed the questionnaire.
+      To receive your full personalized health analysis report,
+      please enter your email address and proceed with secure payment below.
     </p>
 
     <div class="mb-4">
@@ -123,11 +165,13 @@
     </div>
 
     <p class="mt-4" style="font-size:0.9rem;">
-      Secure encrypted payment. Your data is handled confidentially.
+      Your payment is securely encrypted. After successful transaction,
+      your analysis will begin immediately.
     </p>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div>
     <a href="terms.html">Terms & Legal</a>
@@ -140,15 +184,12 @@
 <script>
 function processPayment(provider) {
   const email = document.getElementById("email").value;
-
   if (!email) {
     alert("Please enter your email address.");
     return;
   }
 
-  // HIER später Stripe/PayPal Integration einfügen
-
-  // Temporäre Weiterleitung zur Success Page
+  // TODO: Replace with real Stripe / PayPal integration
   window.location.href = "success.html";
 }
 </script>
