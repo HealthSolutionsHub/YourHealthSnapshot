@@ -60,20 +60,25 @@ nav a:hover {
 .btn-green {
     background-color: #66c28a;
     border: none;
+    pointer-events: none; /* пока disabled */
+    opacity: 0.6;
 }
 
-.btn-green:hover {
-    background-color: #57ad79;
+.btn-green.active {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .btn-outline-green {
     border: 2px solid #66c28a;
     color: #66c28a;
+    pointer-events: none;
+    opacity: 0.6;
 }
 
-.btn-outline-green:hover {
-    background-color: #66c28a;
-    color: white;
+.btn-outline-green.active {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 /* Input Email */
@@ -110,20 +115,49 @@ nav a:hover {
     </p>
 
     <!-- Email Feld -->
-    <input type="email" class="form-control" placeholder="Enter your email address" required />
+    <input id="emailInput" type="email" class="form-control" placeholder="Enter your email address" required />
 
     <p class="mb-3" style="font-size: 14px; color: #555;">
         To receive your personalized report, please enter your email address above. Your results will be sent after the payment is completed.
     </p>
 
     <!-- Buttons -->
-    <a href="https://buy.stripe.com/YOUR_LINK_HERE" class="btn btn-green btn-lg w-100 mb-3">Pay with Card (Stripe)</a>
-    <a href="https://www.paypal.com/checkoutnow?token=YOUR_PAYPAL_LINK" class="btn btn-outline-green btn-lg w-100">Pay with PayPal</a>
+    <a id="stripeBtn" href="#" class="btn btn-green btn-lg w-100 mb-3">Pay with Card (Stripe)</a>
+    <a id="paypalBtn" href="#" class="btn btn-outline-green btn-lg w-100">Pay with PayPal</a>
 
     <p class="mt-4 text-muted" style="font-size: 14px;">
         Secure encrypted payment processing. No medical advice is provided.
     </p>
 </div>
+
+<script>
+// --- Email Validierung ---
+const emailInput = document.getElementById('emailInput');
+const stripeBtn = document.getElementById('stripeBtn');
+const paypalBtn = document.getElementById('paypalBtn');
+
+// Функция проверки email
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Проверка при вводе
+emailInput.addEventListener('input', () => {
+    if(validateEmail(emailInput.value)) {
+        stripeBtn.classList.add('active');
+        paypalBtn.classList.add('active');
+        // Прописываем ссылки с email как параметр
+        stripeBtn.href = "https://buy.stripe.com/YOUR_LINK_HERE?email=" + encodeURIComponent(emailInput.value);
+        paypalBtn.href = "https://www.paypal.com/checkoutnow?token=YOUR_PAYPAL_LINK&email=" + encodeURIComponent(emailInput.value);
+    } else {
+        stripeBtn.classList.remove('active');
+        paypalBtn.classList.remove('active');
+        stripeBtn.href = "#";
+        paypalBtn.href = "#";
+    }
+});
+</script>
 
 </body>
 </html>
