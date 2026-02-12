@@ -2,85 +2,198 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Health Questionnaire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Solutions Hub – Your Health Snapshot</title>
 
-  <!-- Optional: simples Styling -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
+    :root {
+      --green-main: #9fe3b2;
+      --green-soft: #eafaf0;
+      --green-accent: #6fcf97;
+      --text-dark: #1f2933;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--green-soft);
+      color: var(--text-dark);
+      padding-top: 70px;
     }
-    header {
-      background: url("/assets/images/questionnaire-header.jpg") center/cover no-repeat;
-      padding: 60px 20px;
-      color: white;
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .navbar-brand img {
+      height: 100px;
+      width: auto;
+    }
+
+    .navbar a.nav-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+
+    .navbar a.nav-link:hover {
+      color: var(--green-accent);
+    }
+
+    .main-content {
+      min-height: 70vh;
+      padding: 80px 20px;
       text-align: center;
-      background-color: rgba(0,0,0,0.3);
-      background-blend-mode: darken;
     }
-    main {
+
+    .main-content h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .main-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      opacity: 0.9;
+    }
+
+    main.form-container {
       max-width: 800px;
       margin: 30px auto;
-      background: white;
+      background: #fff;
       padding: 30px;
       border-radius: 8px;
     }
+
     .field {
       margin-bottom: 16px;
+      text-align: left;
     }
+
     label {
       display: block;
       font-weight: bold;
       margin-bottom: 6px;
     }
+
     input, select {
       width: 100%;
       padding: 8px;
       font-size: 14px;
     }
-    button {
-      padding: 12px 20px;
+
+    input[type="radio"] {
+      width: auto;
+      margin-right: 6px;
+    }
+
+    .form-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .form-buttons button {
+      flex: 1;
+      min-width: 150px;
+      padding: 12px;
       font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      background-color: var(--green-accent);
+      color: #fff;
       cursor: pointer;
     }
-    .plans {
-      display: flex;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .plan {
-      flex: 1;
-      min-width: 240px;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
+
+    .form-buttons button:hover { background-color: #5fbf86; }
+
+    footer {
+      background-color: #ffffff;
+      padding: 35px 0;
       text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      margin-top: 50px;
     }
-    .plan h3 {
-      margin-top: 0;
+
+    footer a {
+      color: var(--text-dark);
+      margin: 0 12px;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
+      color: var(--green-accent);
+    }
+
+    .social-icons {
+      margin-bottom: 10px;
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin: 0 12px;
+      color: var(--green-accent);
+    }
+
+    .social-icons i:hover {
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Health Questionnaire</h1>
-</header>
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
+    </a>
 
-<main>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <form id="health-form">
-
-    <div class="field">
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" required />
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
+<!-- MAIN CONTENT -->
+<section class="main-content">
+  <div class="container">
+    <h1>Welcome to <strong>Your Health Snapshot</strong></h1>
+    <p>
+      Take this quick health assessment to discover your key health indicators and get personalized insights.
+      Start with simple calculations like BMI, and explore more detailed results with the premium option.
+      Learn more about the evidence and statistics behind this assessment in our References.
+      This assessment does not replace medical consultation, but helps you find qualified specialists associated
+      with recognized medical societies in your country. Your answers are private and secure.
+    </p>
+  </div>
+</section>
+
+<!-- FORMULÄR -->
+<main class="form-container">
+  <form id="health-form">
     <div class="field">
       <label for="country">Country</label>
       <input type="text" id="country" required />
@@ -117,19 +230,31 @@
       <input type="number" id="weight" required />
     </div>
 
+    <!-- Smoking -->
     <div class="field">
-      <label for="smoking">Smoking (0 = No, 1 = Yes)</label>
-      <input type="number" id="smoking" min="0" max="1" required />
+      <label>Smoking</label>
+      <label><input type="radio" name="smoking" value="0" required /> No</label>
+      <label><input type="radio" name="smoking" value="1" required /> Yes</label>
+    </div>
+
+    <!-- Alcohol per day (WHO standard) -->
+    <div class="field">
+      <label>Do you currently consume alcohol? (WHO: current drinker)</label>
+      <label><input type="radio" name="alcohol" value="0" required /> No</label>
+      <label><input type="radio" name="alcohol" value="1" required /> Yes</label>
     </div>
 
     <div class="field">
-      <label for="alcohol">Alcohol (0 = No, 1 = Yes)</label>
-      <input type="number" id="alcohol" min="0" max="1" required />
+      <label>If yes, how many standard drinks per day? (1 standard drink ≈ 10–12g pure alcohol)</label>
+      <input type="number" name="alcohol_per_day" min="0" step="0.1" placeholder="Drinks/day" />
     </div>
 
+    <!-- Physical Activity -->
     <div class="field">
-      <label for="activity">Physical Activity (hours/week)</label>
-      <input type="number" id="activity" required />
+      <label>Physical Activity (hours/week)</label>
+      <label><input type="radio" name="activity" value="0-2" required /> 0–2 h</label>
+      <label><input type="radio" name="activity" value="3-5" required /> 3–5 h</label>
+      <label><input type="radio" name="activity" value="6+" required /> 6+ h</label>
     </div>
 
     <div class="field">
@@ -137,57 +262,102 @@
       <input type="number" id="life_expectancy" required />
     </div>
 
-    <button type="submit">Submit</button>
+    <div class="form-buttons">
+      <button type="button" id="testReportBtn">Test Report</button>
+      <button type="button" id="fullReportBtn">Full Report</button>
+      <button type="button" id="fillAgainBtn">Fill out again</button>
+    </div>
   </form>
-
-  <section class="plans">
-    <div class="plan">
-      <h3>Standard</h3>
-      <p>Digitale Empfehlungen + PDF</p>
-      <a href="/subscribe/standard">Start Standard</a>
-    </div>
-
-    <div class="plan">
-      <h3>Premium</h3>
-      <p>Erweiterte Analysen + Visualisierungen + PDF</p>
-      <a href="/subscribe/premium">Upgrade to Premium</a>
-    </div>
-  </section>
-
 </main>
 
+<!-- FOOTER -->
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-telegram"></i></a>
+  </div>
+
+  <div>
+    <a href="termslegal.html">Terms & Legal</a>
+  </div>
+
+  <div class="mt-2">
+    © 2006 Health Solutions Hub. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-document.getElementById("health-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
+  // Eindeutige ID generieren
+  function generateId() { return 'id-' + Math.random().toString(36).substr(2, 9); }
 
-  const data = {
-    Email: email.value,
-    Country: country.value,
-    Age_group: age_group.value,
-    Sex: sex.value,
-    Height_cm: Number(height.value),
-    Weight_kg: Number(weight.value),
-    Smoking: Number(smoking.value),
-    Alcohol: Number(alcohol.value),
-    Physical_Activity: Number(activity.value),
-    Healthy_Life_Expectancy: Number(life_expectancy.value)
-  };
+  // Formulardaten abrufen
+  function getFormData() {
+    const smoking = document.querySelector('input[name="smoking"]:checked')?.value;
+    const alcohol = document.querySelector('input[name="alcohol"]:checked')?.value;
+    const alcohol_per_day = document.querySelector('input[name="alcohol_per_day"]').value || 0;
+    const activity = document.querySelector('input[name="activity"]:checked')?.value;
 
-  try {
-    const res = await fetch("https://dein-render-api-url/recommendations/compact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-    alert("Token: " + (result.token ?? "n/a") + "\n\n" + result.recommendation_text);
-  } catch (err) {
-    alert("Fehler beim Senden der Daten");
-    console.error(err);
+    return {
+      id: localStorage.getItem('formId') || generateId(),
+      Country: document.getElementById('country').value,
+      Age_group: document.getElementById('age_group').value,
+      Sex: document.getElementById('sex').value,
+      Height_cm: Number(document.getElementById('height').value),
+      Weight_kg: Number(document.getElementById('weight').value),
+      Smoking: smoking,
+      Alcohol: alcohol,
+      Alcohol_per_day: Number(alcohol_per_day),
+      Physical_Activity: activity,
+      Healthy_Life_Expectancy: Number(document.getElementById('life_expectancy').value)
+    };
   }
-});
-</script>
 
+  // Daten lokal speichern
+  function saveFormDataLocally(data) {
+    localStorage.setItem('formData', JSON.stringify(data));
+    localStorage.setItem('formId', data.id);
+  }
+
+  // Vorbefüllung beim Laden
+  window.addEventListener('load', () => {
+    const saved = JSON.parse(localStorage.getItem('formData'));
+    if (saved) {
+      document.getElementById('country').value = saved.Country;
+      document.getElementById('age_group').value = saved.Age_group;
+      document.getElementById('sex').value = saved.Sex;
+      document.getElementById('height').value = saved.Height_cm;
+      document.getElementById('weight').value = saved.Weight_kg;
+      document.getElementById('life_expectancy').value = saved.Healthy_Life_Expectancy;
+
+      if(saved.Smoking !== undefined) document.querySelector(`input[name="smoking"][value="${saved.Smoking}"]`)?.checked = true;
+      if(saved.Alcohol !== undefined) document.querySelector(`input[name="alcohol"][value="${saved.Alcohol}"]`)?.checked = true;
+      document.querySelector('input[name="alcohol_per_day"]').value = saved.Alcohol_per_day || '';
+      if(saved.Physical_Activity !== undefined) document.querySelector(`input[name="activity"][value="${saved.Physical_Activity}"]`)?.checked = true;
+    }
+  });
+
+  // Button Events
+  document.getElementById('fullReportBtn').addEventListener('click', () => {
+    const data = getFormData();
+    saveFormDataLocally(data);
+    window.location.href = '/payment.html?id=' + data.id; // Full Report → Payment
+  });
+
+  document.getElementById('testReportBtn').addEventListener('click', () => {
+    const data = getFormData();
+    saveFormDataLocally(data);
+    window.location.href = '/test-report.html'; // Test Report lokal
+  });
+
+  document.getElementById('fillAgainBtn').addEventListener('click', () => {
+    localStorage.removeItem('formData');
+    localStorage.removeItem('formId');
+    document.getElementById('health-form').reset();
+  });
+</script>
 </body>
 </html>
