@@ -1,111 +1,17 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <title>Health Questionnaire</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    body { font-family: Arial, sans-serif; background: #f7f7f7; margin:0; padding:0; }
-    header { background: url("/assets/images/questionnaire-header.jpg") center/cover no-repeat; padding:60px 20px; color:white; text-align:center; background-color: rgba(0,0,0,0.3); background-blend-mode: darken; }
-    main { max-width:800px; margin:30px auto; background:white; padding:30px; border-radius:8px; }
-    .field { margin-bottom:16px; }
-    label { display:block; font-weight:bold; margin-bottom:6px; }
-    input, select { width:100%; padding:8px; font-size:14px; }
-    button { padding:12px 20px; font-size:16px; cursor:pointer; margin-right:10px; }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Health Questionnaire</h1>
-</header>
-
-<main>
-
-  <!-- FORMULAR -->
-  <form id="health-form">
-
-    <div class="field">
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" />
-    </div>
-
-    <div class="field">
-      <label for="country">Country</label>
-      <input type="text" id="country" required />
-    </div>
-
-    <div class="field">
-      <label for="age_group">Age Group</label>
-      <select id="age_group" required>
-        <option value="">Bitte wählen</option>
-        <option>18-24</option>
-        <option>25-34</option>
-        <option>35-44</option>
-        <option>45-54</option>
-        <option>55+</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="sex">Sex</label>
-      <select id="sex" required>
-        <option value="">Bitte wählen</option>
-        <option value="M">Male</option>
-        <option value="F">Female</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="height">Height (cm)</label>
-      <input type="number" id="height" required />
-    </div>
-
-    <div class="field">
-      <label for="weight">Weight (kg)</label>
-      <input type="number" id="weight" required />
-    </div>
-
-    <div class="field">
-      <label for="smoking">Smoking (0 = No, 1 = Yes)</label>
-      <input type="number" id="smoking" min="0" max="1" required />
-    </div>
-
-    <div class="field">
-      <label for="alcohol">Alcohol (0 = No, 1 = Yes)</label>
-      <input type="number" id="alcohol" min="0" max="1" required />
-    </div>
-
-    <div class="field">
-      <label for="activity">Physical Activity (hours/week)</label>
-      <input type="number" id="activity" required />
-    </div>
-
-    <div class="field">
-      <label for="life_expectancy">Healthy Life Expectancy (years)</label>
-      <input type="number" id="life_expectancy" required />
-    </div>
-
-    <!-- BUTTONS -->
-    <div class="field">
-      <button type="button" id="testReportBtn">Test Report</button>
-      <button type="button" id="fullReportBtn">Full Report</button>
-      <button type="button" id="fillAgainBtn">Fill out again</button>
-    </div>
-
-  </form>
-
-</main>
+<!-- Buttons unterhalb des bestehenden Formulars -->
+<div class="field">
+  <button type="button" id="testReportBtn">Test Report</button>
+  <button type="button" id="fullReportBtn">Full Report</button>
+  <button type="button" id="fillAgainBtn">Fill out again</button>
+</div>
 
 <script>
-  // Funktion zur Generierung einer eindeutigen Nutzer-ID
+  // Eindeutige ID generieren, falls noch nicht vorhanden
   function generateId() {
     return 'id-' + Math.random().toString(36).substr(2, 9);
   }
 
-  // Formular validieren
+  // Prüfen, dass alle Pflichtfelder ausgefüllt sind
   function validateForm() {
     const fields = ['country','age_group','sex','height','weight','smoking','alcohol','activity','life_expectancy'];
     for (let f of fields) {
@@ -117,7 +23,7 @@
     return true;
   }
 
-  // Daten lokal speichern
+  // Formulardaten lokal speichern
   function saveFormData() {
     const formData = {
       id: localStorage.getItem('formId') || generateId(),
@@ -137,7 +43,7 @@
     return formData;
   }
 
-  // Daten beim Laden wieder einfügen
+  // Gespeicherte Daten beim Laden wieder einfügen
   window.addEventListener('load', () => {
     const saved = JSON.parse(localStorage.getItem('formData'));
     if (saved) {
@@ -149,28 +55,24 @@
     }
   });
 
-  // TEST REPORT → nur lokal verwenden, kein API-Call
+  // Test Report → nur lokal
   document.getElementById('testReportBtn').addEventListener('click', () => {
     if (!validateForm()) return;
     saveFormData();
     alert('Test Report lokal gespeichert. Sie können ihn sofort einsehen.');
   });
 
-  // FULL REPORT → lokal speichern, dann zur Payment-Seite weiterleiten
+  // Full Report → lokal speichern und zur Payment-Seite weiterleiten
   document.getElementById('fullReportBtn').addEventListener('click', () => {
     if (!validateForm()) return;
     const data = saveFormData();
-    window.location.href = '/payment.html?id=' + data.id; // Weiterleitung zur Payment-Seite
+    window.location.href = '/payment.html?id=' + data.id;
   });
 
-  // FILL OUT AGAIN → Formular zurücksetzen und lokale Daten löschen
+  // Fill out again → Formular zurücksetzen
   document.getElementById('fillAgainBtn').addEventListener('click', () => {
     localStorage.removeItem('formData');
     localStorage.removeItem('formId');
     document.getElementById('health-form').reset();
   });
-
 </script>
-
-</body>
-</html>
