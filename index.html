@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health Solutions Hub – Health Questionnaire</title>
+  <title>Health Solutions Hub – Your Health Snapshot</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,32 +11,102 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
+    :root {
+      --green-main: #9fe3b2;
+      --green-soft: #eafaf0;
+      --green-accent: #6fcf97;
+      --text-dark: #1f2933;
+    }
+
     body {
-      font-family: "Inter", Arial, sans-serif;
-      background-color: #eafaf0;
-      padding: 70px 20px 30px;
-      color: #1f2933;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--green-soft);
+      color: var(--text-dark);
+      padding-top: 70px;
     }
 
-    header {
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .navbar-brand img {
+      height: 100px;
+      width: auto;
+    }
+
+    .navbar a.nav-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+
+    .navbar a.nav-link:hover {
+      color: var(--green-accent);
+    }
+
+    .main-content {
+      min-height: 70vh;
+      padding: 80px 20px;
       text-align: center;
-      padding: 30px 0;
     }
 
-    main {
+    .main-content h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .main-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      opacity: 0.9;
+    }
+
+    main.form-container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 30px auto;
       background: #fff;
       padding: 30px;
       border-radius: 8px;
     }
 
-    .field { margin-bottom: 16px; }
-    label { font-weight: bold; display: block; margin-bottom: 6px; }
-    input, select { width: 100%; padding: 8px; font-size: 14px; }
-    input[type="radio"] { width: auto; margin-right: 6px; }
-    .form-buttons { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .field {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    input[type="radio"] {
+      width: auto;
+      margin-right: 6px;
+    }
+
+    .form-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .form-buttons button {
       flex: 1;
       min-width: 150px;
@@ -44,24 +114,86 @@
       font-size: 16px;
       border: none;
       border-radius: 50px;
-      background-color: #6fcf97;
+      background-color: var(--green-accent);
       color: #fff;
       cursor: pointer;
     }
+
     .form-buttons button:hover { background-color: #5fbf86; }
+
+    footer {
+      background-color: #ffffff;
+      padding: 35px 0;
+      text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: var(--text-dark);
+      margin: 0 12px;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
+      color: var(--green-accent);
+    }
+
+    .social-icons {
+      margin-bottom: 10px;
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin: 0 12px;
+      color: var(--green-accent);
+    }
+
+    .social-icons i:hover {
+      opacity: 0.7;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Your Health Snapshot – Questionnaire</h1>
-  <p>Fill out the quick questionnaire to get your personalized health insights.</p>
-</header>
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
+    </a>
 
-<main>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<section class="main-content">
+  <div class="container">
+    <h1>Welcome to <strong>Your Health Snapshot</strong></h1>
+    <p>
+      Take this quick health assessment to discover your key health indicators and get personalized insights.
+      Start with simple calculations like BMI, and explore more detailed results with the premium option.
+      Learn more about the evidence and statistics behind this assessment in our References.
+      This assessment does not replace medical consultation, but helps you find qualified specialists associated
+      with recognized medical societies in your country. Your answers are private and secure.
+    </p>
+  </div>
+</section>
+
+<!-- FORMULÄR -->
+<main class="form-container">
   <form id="health-form">
-
     <div class="field">
       <label for="country">Country</label>
       <input type="text" id="country" required />
@@ -138,14 +270,35 @@
   </form>
 </main>
 
+<!-- FOOTER -->
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-telegram"></i></a>
+  </div>
+
+  <div>
+    <a href="termslegal.html">Terms & Legal</a>
+  </div>
+
+  <div class="mt-2">
+    © 2006 Health Solutions Hub. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-  // Eindeutige ID
+  // Eindeutige ID generieren
   function generateId() { return 'id-' + Math.random().toString(36).substr(2, 9); }
 
+  // Formulardaten abrufen
   function getFormData() {
     const smoking = document.querySelector('input[name="smoking"]:checked')?.value;
     const alcohol = document.querySelector('input[name="alcohol"]:checked')?.value;
-    const alcohol_per_day = document.querySelector('input[name="alcohol_per_day"]')?.value || 0;
+    const alcohol_per_day = document.querySelector('input[name="alcohol_per_day"]').value || 0;
     const activity = document.querySelector('input[name="activity"]:checked')?.value;
 
     return {
@@ -163,11 +316,13 @@
     };
   }
 
+  // Daten lokal speichern
   function saveFormDataLocally(data) {
     localStorage.setItem('formData', JSON.stringify(data));
     localStorage.setItem('formId', data.id);
   }
 
+  // Vorbefüllung beim Laden
   window.addEventListener('load', () => {
     const saved = JSON.parse(localStorage.getItem('formData'));
     if (saved) {
@@ -185,17 +340,17 @@
     }
   });
 
-  // Buttons
+  // Button Events
   document.getElementById('fullReportBtn').addEventListener('click', () => {
     const data = getFormData();
     saveFormDataLocally(data);
-    window.location.href = '/payment.html?id=' + data.id;
+    window.location.href = '/payment.html?id=' + data.id; // Full Report → Payment
   });
 
   document.getElementById('testReportBtn').addEventListener('click', () => {
     const data = getFormData();
     saveFormDataLocally(data);
-    window.location.href = '/test-report.html';
+    window.location.href = '/test-report.html'; // Test Report lokal
   });
 
   document.getElementById('fillAgainBtn').addEventListener('click', () => {
@@ -204,3 +359,5 @@
     document.getElementById('health-form').reset();
   });
 </script>
+</body>
+</html>
