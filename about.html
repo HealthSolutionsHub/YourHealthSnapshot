@@ -51,7 +51,7 @@
     section.main-content h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 25px; }
     section.main-content p { font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto 40px; opacity: 0.9; }
 
-    /* ICON LIST / FEATURES */
+    /* FEATURE LIST / PROJECT GOALS */
     .feature-list {
       display: flex;
       justify-content: center;
@@ -65,16 +65,17 @@
       border-radius: 16px;
       width: 220px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
     }
-    .feature-item:hover { transform: translateY(-5px); }
+    .feature-item:hover { transform: translateY(-5px); box-shadow: 0 25px 45px rgba(0,0,0,0.1); }
     .feature-item i {
       font-size: 2.5rem;
       color: var(--green-accent);
       margin-bottom: 15px;
     }
     .feature-item h5 { font-weight: 600; margin-bottom: 10px; }
-    .feature-item p { font-size: 0.95rem; opacity: 0.8; }
+    .feature-item p { font-size: 0.95rem; opacity: 0.85; }
 
     /* FOOTER */
     footer {
@@ -123,30 +124,34 @@
   <div class="container">
     <h1>About Our Project</h1>
     <p>
-      We use global health data to help individuals understand their personal health. Compare your indicators with statistics from the WHO, WHO-Europe, and World Bank. Find qualified specialists in your country and make informed decisions for a healthier life.
+      Our mission is to empower individuals to take control of their health using <strong>reliable global data</strong>. 
+      We combine official statistics with practical guidance to help you make informed health decisions. 
+      Explore real health datasets here: 
+      <a href="https://www.who.int/data/gho" target="_blank">WHO Global Health Observatory</a> and 
+      <a href="https://data.worldbank.org/topic/health" target="_blank">World Bank Health Data</a>.
     </p>
 
-    <!-- FEATURES WITH ICONS -->
+    <!-- FEATURE / PROJECT GOALS -->
     <div class="feature-list">
       <div class="feature-item">
-        <i class="fas fa-globe"></i>
-        <h5>Global Data</h5>
-        <p>Compare yourself against international health statistics.</p>
+        <i class="fas fa-search"></i>
+        <h5>Explore Health Indicators</h5>
+        <p>Access a wide range of official health statistics for evidence-based insights.</p>
       </div>
       <div class="feature-item">
-        <i class="fas fa-user-shield"></i>
+        <i class="fas fa-lightbulb"></i>
+        <h5>Inform Decisions</h5>
+        <p>Use data-driven recommendations to guide lifestyle and wellness choices.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-hand-holding-medical"></i>
+        <h5>Find Specialists</h5>
+        <p>Locate qualified healthcare providers and experts in your country.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-lock"></i>
         <h5>Privacy & Security</h5>
-        <p>Your answers remain confidential and secure.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-heartbeat"></i>
-        <h5>Health Insights</h5>
-        <p>Structured analysis of your personal indicators.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-stethoscope"></i>
-        <h5>Expert Support</h5>
-        <p>Access qualified specialists in your country.</p>
+        <p>All responses remain confidential and securely stored.</p>
       </div>
     </div>
   </div>
