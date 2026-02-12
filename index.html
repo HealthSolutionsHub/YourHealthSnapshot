@@ -58,6 +58,13 @@
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 15px;
+      word-break: break-word;
+    }
+
+    @media (max-width: 600px) {
+      .main-content h1 {
+        font-size: 2rem;
+      }
     }
 
     .main-content p {
@@ -67,6 +74,19 @@
       margin: 0 auto 25px;
       opacity: 0.9;
     }
+
+    .start-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: var(--green-accent);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-bottom: 30px;
+    }
+
+    .start-btn:hover { background-color: #5fbf86; }
 
     main.form-container {
       max-width: 800px;
@@ -187,19 +207,20 @@
 <!-- MAIN CONTENT -->
 <section class="main-content">
   <div class="container">
-    <h1>Welcome to <strong>Your Health Snapshot</strong></h1>
+    <h1>Welcome to <br><strong>Your Health Snapshot</strong></h1>
     <p>
       Complete this quick <strong>personalized check</strong> to discover key indicators and get tailored insights.
       Start with simple calculations like BMI, and access more detailed results with the premium option.
-      Learn more about the evidence and statistics behind this check on our <a href="about.html">About page</a>.
+      Learn more about the evidence and statistics behind this check on our <a href="about.html">About</a>.
       This check is not a medical consultation, but helps you find qualified specialists linked to recognized medical societies in your country. Your answers are private and secure.
     </p>
+    <a href="#health-form" class="start-btn">Start Self Assessment</a>
   </div>
 </section>
 
 <!-- SELF ASSESSMENT FORM -->
 <main class="form-container">
-  <h2>Start Your Self Assessment</h2>
+  <h2>Your Self Assessment</h2>
   <form id="health-form">
     <div class="field">
       <label for="country">Country</label>
@@ -295,10 +316,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  // Eindeutige ID generieren
   function generateId() { return 'id-' + Math.random().toString(36).substr(2, 9); }
 
-  // Formulardaten abrufen
   function getFormData() {
     const smoking = document.querySelector('input[name="smoking"]:checked')?.value;
     const alcohol = document.querySelector('input[name="alcohol"]:checked')?.value;
@@ -320,13 +339,11 @@
     };
   }
 
-  // Daten lokal speichern
   function saveFormDataLocally(data) {
     localStorage.setItem('formData', JSON.stringify(data));
     localStorage.setItem('formId', data.id);
   }
 
-  // Vorbefüllung beim Laden
   window.addEventListener('load', () => {
     const saved = JSON.parse(localStorage.getItem('formData'));
     if (saved) {
@@ -336,7 +353,6 @@
       document.getElementById('height').value = saved.Height_cm;
       document.getElementById('weight').value = saved.Weight_kg;
       document.getElementById('life_expectancy').value = saved.Healthy_Life_Expectancy;
-
       if(saved.Smoking !== undefined) document.querySelector(`input[name="smoking"][value="${saved.Smoking}"]`)?.checked = true;
       if(saved.Alcohol !== undefined) document.querySelector(`input[name="alcohol"][value="${saved.Alcohol}"]`)?.checked = true;
       document.querySelector('input[name="alcohol_per_day"]').value = saved.Alcohol_per_day || '';
@@ -344,17 +360,16 @@
     }
   });
 
-  // Button Events
   document.getElementById('fullReportBtn').addEventListener('click', () => {
     const data = getFormData();
     saveFormDataLocally(data);
-    window.location.href = '/payment.html?id=' + data.id; // Full Report → Payment
+    window.location.href = '/payment.html?id=' + data.id;
   });
 
   document.getElementById('testReportBtn').addEventListener('click', () => {
     const data = getFormData();
     saveFormDataLocally(data);
-    window.location.href = '/test-report.html'; // Test Report lokal
+    window.location.href = '/test-report.html';
   });
 
   document.getElementById('fillAgainBtn').addEventListener('click', () => {
@@ -363,5 +378,6 @@
     document.getElementById('health-form').reset();
   });
 </script>
+
 </body>
 </html>
