@@ -7,7 +7,6 @@
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +14,8 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
@@ -31,6 +30,7 @@
       background-color: var(--green-soft);
       color: var(--text-dark);
       padding-top: 100px;
+      margin: 0;
     }
 
     /* NAVBAR */
@@ -38,25 +38,9 @@
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
-
-    .navbar-brand img {
-      height: 100px;
-      width: auto;
-    }
-
-    .navbar a.nav-link {
-      color: var(--text-dark);
-      font-weight: 500;
-      margin-left: 1rem;
-    }
-
-    .navbar a.nav-link:hover {
-      color: var(--green-accent);
-    }
-
-    .navbar-light .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
+    .navbar-brand img { height: 100px; width: auto; }
+    .navbar a.nav-link { color: var(--text-dark); font-weight: 500; margin-left: 1rem; }
+    .navbar a.nav-link:hover { color: var(--green-accent); }
 
     /* MAIN CONTENT */
     section.main-content {
@@ -64,38 +48,33 @@
       padding: 80px 20px;
       text-align: center;
     }
+    section.main-content h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 25px; }
+    section.main-content p { font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto 40px; opacity: 0.9; }
 
-    section.main-content h1 {
+    /* ICON LIST / FEATURES */
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .feature-item {
+      background: #ffffff;
+      padding: 25px 20px;
+      border-radius: 16px;
+      width: 220px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .feature-item:hover { transform: translateY(-5px); }
+    .feature-item i {
       font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 25px;
+      color: var(--green-accent);
+      margin-bottom: 15px;
     }
-
-    section.main-content p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      opacity: 0.9;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 30px;
-      font-size: 1rem;
-      font-weight: 500;
-      border-radius: 999px;
-      border: none;
-      background-color: var(--green-accent);
-      color: #ffffff;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: #5fbf86;
-    }
+    .feature-item h5 { font-weight: 600; margin-bottom: 10px; }
+    .feature-item p { font-size: 0.95rem; opacity: 0.8; }
 
     /* FOOTER */
     footer {
@@ -104,36 +83,22 @@
       text-align: center;
       border-top: 1px solid rgba(0,0,0,0.05);
     }
+    footer a { color: var(--text-dark); margin: 0 12px; font-size: 0.95rem; }
+    footer a:hover { color: var(--green-accent); }
+    .social-icons { margin-bottom: 10px; }
+    .social-icons i { font-size: 1.4rem; margin: 0 12px; color: var(--green-accent); }
+    .social-icons i:hover { opacity: 0.7; }
 
-    footer a {
-      color: var(--text-dark);
-      margin: 0 12px;
-      font-size: 0.95rem;
-    }
-
-    footer a:hover {
-      color: var(--green-accent);
-    }
-
-    .social-icons {
-      margin-bottom: 10px;
-    }
-
-    .social-icons i {
-      font-size: 1.4rem;
-      margin: 0 12px;
-      color: var(--green-accent);
-    }
-
-    .social-icons i:hover {
-      opacity: 0.7;
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .feature-item { width: 100%; max-width: 300px; }
     }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -148,7 +113,6 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Support</a></li>
-        <!-- About-Link ist entfernt, weil wir gerade auf About-Seite sind -->
       </ul>
     </div>
   </div>
@@ -159,8 +123,32 @@
   <div class="container">
     <h1>About Our Project</h1>
     <p>
-      There are many international organizations that collect population health statistics. Our project uses these data to help individuals assess their own health. By comparing your personal indicators with global statistics from the World Health Organization’s Global Health Observatory (WHO-GHO) [link], Europe-specific data from WHO-Europe [link], and international health and demographic indicators from the World Bank Open Data API [link], you can monitor your health, consult specialists when needed, and make informed decisions to improve well-being. In addition, we support you by providing the possibility to find qualified specialists in your country who can help you manage changes in your health parameters. The goal of this project is to provide a simple, evidence-based tool for proactive health management.
+      We use global health data to help individuals understand their personal health. Compare your indicators with statistics from the WHO, WHO-Europe, and World Bank. Find qualified specialists in your country and make informed decisions for a healthier life.
     </p>
+
+    <!-- FEATURES WITH ICONS -->
+    <div class="feature-list">
+      <div class="feature-item">
+        <i class="fas fa-globe"></i>
+        <h5>Global Data</h5>
+        <p>Compare yourself against international health statistics.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-user-shield"></i>
+        <h5>Privacy & Security</h5>
+        <p>Your answers remain confidential and secure.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-heartbeat"></i>
+        <h5>Health Insights</h5>
+        <p>Structured analysis of your personal indicators.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-stethoscope"></i>
+        <h5>Expert Support</h5>
+        <p>Access qualified specialists in your country.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -172,14 +160,8 @@
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-telegram"></i></a>
   </div>
-
-  <div>
-    <a href="termslegal.html">Terms & Legal</a>
-  </div>
-
-  <div class="mt-2">
-    © 2006 Health Solutions Hub. All rights reserved.
-  </div>
+  <div><a href="termslegal.html">Terms & Legal</a></div>
+  <div class="mt-2">© 2006 Health Solutions Hub. All rights reserved.</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
