@@ -1,7 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Solutions Hub – Support</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/YourHealthSnapshot_falcon_7.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --green-main: #9fe3b2;
+      --green-soft: #eafaf0;
+      --green-accent: #6fcf97;
+      --text-dark: #1f2933;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--green-soft);
+      color: var(--text-dark);
+      padding-top: 100px; /* Platz für fixierte Navbar */
+      margin: 0;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .navbar-brand img { height: 100px; width: auto; }
+    .navbar a.nav-link { color: var(--text-dark); font-weight: 500; margin-left: 1rem; }
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link.active { color: var(--green-accent); }
+    .navbar-light .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* SUPPORT SECTION */
+    .support-section {
+      background-color: var(--green-soft);
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .support-section h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    .support-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      opacity: 0.9;
+    }
+    .support-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 999px;
+      border: none;
+      background-color: var(--green-accent);
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .support-btn:hover { background-color: #5fbf86; }
+
+    /* FOOTER */
+    footer {
+      background-color: #ffffff;
+      padding: 35px 0;
+      text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    footer a { color: var(--text-dark); margin: 0 12px; font-size: 0.95rem; }
+    footer a:hover { color: var(--green-accent); }
+    .social-icons { margin-bottom: 10px; }
+    .social-icons i { font-size: 1.4rem; margin: 0 12px; color: var(--green-accent); }
+    .social-icons i:hover { opacity: 0.7; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/YourHealthSnapshot_logo.svg" alt="Health Solutions Hub">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SUPPORT CONTENT -->
+<section class="support-section">
+  <div class="container">
+    <h1>Need Help or Have Questions?</h1>
+    <p>Use our digital assistant for instant, general information. It provides guidance on how to navigate our platform and understand our data. This assistant does <strong>not provide medical advice</strong>.</p>
+    <p>If the assistant cannot answer your query, you can provide your email address so that a qualified support specialist can respond. Your information is used solely to answer your question and is handled securely and confidentially.</p>
+    <p>We aim to give general support quickly while ensuring expert assistance is available when needed.</p>
+    <a href="#digital-assistant" class="support-btn">Ask the Assistant</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-telegram"></i></a>
+  </div>
+  <div><a href="termslegal.html">Terms & Legal</a></div>
+  <div class="mt-2">© 2006 Health Solutions Hub. All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Health Solutions Hub – Support</title>
 
