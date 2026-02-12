@@ -38,17 +38,18 @@
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
-    .navbar-brand img { height: 100px; width: auto; }
+    .navbar-brand img { height: 100px; }
     .navbar a.nav-link { color: var(--text-dark); font-weight: 500; margin-left: 1rem; }
-    .navbar a.nav-link:hover, .navbar a.nav-link.active { color: var(--green-accent); }
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link.active { color: var(--green-accent); }
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2933' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 
-    /* SUPPORT SECTION */
+    /* MAIN SUPPORT SECTION */
     .support-section {
-      background-color: var(--green-soft);
-      padding: 100px 20px;
+      min-height: 70vh;
+      padding: 80px 20px;
       text-align: center;
     }
     .support-section h1 {
@@ -63,9 +64,16 @@
       margin: 0 auto 20px;
       opacity: 0.9;
     }
+    .support-section h2 {
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--green-accent);
+    }
     .support-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       padding: 12px 30px;
       font-size: 1rem;
       font-weight: 500;
@@ -108,6 +116,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <!-- Support current -->
       </ul>
     </div>
   </div>
@@ -116,11 +125,25 @@
 <!-- SUPPORT CONTENT -->
 <section class="support-section">
   <div class="container">
-    <h1>Need Help or Have Questions?</h1>
-    <p>Use our digital assistant for instant, general guidance on navigating the platform and understanding the health data. <strong>It does not provide medical advice.</strong></p>
-    <p>If the assistant cannot answer your query, you can provide your email so a qualified support specialist can respond securely and confidentially.</p>
-    <p>We aim to provide quick general support while ensuring expert assistance is available when needed.</p>
-    <a href="#digital-assistant" class="support-btn">Ask the Assistant</a>
+    <h1>Support & Assistance</h1>
+
+    <h2>Instant Help</h2>
+    <p>Our digital assistant can answer general questions about our platform and how to interpret health data. <strong>It does not provide medical advice.</strong></p>
+
+    <h2>Expert Support</h2>
+    <p>If the assistant cannot answer, you may provide your email, and a support specialist will respond securely and confidentially.</p>
+
+    <h2>Privacy & Security</h2>
+    <p>Your email is used solely to respond to your query and will not be shared or stored for any other purpose.</p>
+
+    <h2>How It Works</h2>
+    <ol style="text-align:left; max-width:600px; margin:0 auto;">
+      <li>Ask your question in the digital assistant.</li>
+      <li>Provide your email if needed.</li>
+      <li>A support specialist replies securely.</li>
+    </ol>
+
+    <a href="#digital-assistant" class="support-btn mt-4">Ask the Assistant</a>
   </div>
 </section>
 
