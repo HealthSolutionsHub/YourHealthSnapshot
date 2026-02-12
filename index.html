@@ -22,23 +22,21 @@
       --text-dark: #1f2933;
     }
 
+    /* BODY & NAVBAR */
     body {
       font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       background-color: var(--green-soft);
       color: var(--text-dark);
-      padding-top: 120px;
+      padding-top: 110px;
       margin: 0;
     }
 
-    /* Navbar */
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
-    .navbar-brand img { 
-      height: 100px; /* Logo angepasst */
-    }
+    .navbar-brand img { height: 100px; } /* Logo größer */
 
     .navbar a.nav-link {
       color: var(--text-dark);
@@ -48,85 +46,107 @@
 
     .navbar a.nav-link:hover { color: var(--green-accent); }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero-section {
       width: 100%;
-      padding: 160px 0 140px;
+      padding: 120px 0 80px; /* kompakter */
       background: linear-gradient(135deg, #eafaf0 0%, #ffffff 70%);
     }
 
-    .hero-title { font-size: 3.8rem; font-weight: 600; line-height: 1.15; }
+    .hero-title { font-size: 3.5rem; font-weight: 600; line-height: 1.15; }
     .highlight { color: var(--green-accent); }
-    .hero-subtitle { margin-top: 20px; font-size: 1.25rem; max-width: 550px; opacity: 0.95; }
-
+    .hero-subtitle { margin-top: 15px; font-size: 1.2rem; max-width: 500px; opacity: 0.9; }
     .hero-btn {
       background-color: var(--green-accent);
       color: white;
-      padding: 16px 32px;
+      padding: 14px 28px;
       border-radius: 50px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: inline-block;
       margin-top: 25px;
       text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
     }
     .hero-btn:hover { background-color: #5fbf86; color: white; }
 
     .hero-card {
       background: white;
-      padding: 50px;
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-      max-width: 420px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      max-width: 380px;
       margin: 0 auto;
       text-align: center;
     }
     .stat-number { margin-top: 15px; font-size: 2rem; font-weight: 600; color: var(--green-accent); }
 
-    /* Benefits Section */
-    .benefits-section { padding: 100px 0; background: #ffffff; }
+    /* BENEFITS SECTION */
+    .benefits-section { padding: 60px 0; background: #ffffff; }
     .benefit-card {
       background: #f9fdfb;
-      padding: 40px;
+      padding: 30px;
       border-radius: 16px;
       height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease;
     }
-    .benefit-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    .benefit-card i { font-size: 3.5rem; margin-bottom: 20px; color: var(--green-accent); }
+    .benefit-card:hover { transform: translateY(-5px); }
+    .benefit-card i { font-size: 3rem; margin-bottom: 20px; color: var(--green-accent); }
 
-    /* Footer */
+    /* FORM SECTION */
+    .form-wrapper { padding: 80px 0; background: var(--green-soft); }
+    main.form-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      padding: 50px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    }
+    main.form-container h2 { text-align: center; margin-bottom: 30px; color: var(--green-accent); font-weight: 600; }
+    .field { margin-bottom: 15px; text-align: left; }
+    label { display: block; font-weight: bold; margin-bottom: 6px; }
+    input, select { width: 100%; padding: 8px; font-size: 14px; }
+    input[type="radio"] { width: auto; margin-right: 6px; }
+
+    .form-buttons { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .form-buttons button {
+      flex: 1; min-width: 150px; padding: 12px; font-size: 16px;
+      border: none; border-radius: 50px; background-color: var(--green-accent);
+      color: #fff; cursor: pointer;
+    }
+    .form-buttons button:hover { background-color: #5fbf86; }
+
+    .form-row { display: flex; flex-wrap: wrap; gap: 20px; }
+    .form-col { flex: 1; min-width: 250px; }
+
+    /* FOOTER */
     footer {
       background-color: #ffffff;
-      padding: 45px 0;
+      padding: 35px 0;
       text-align: center;
       border-top: 1px solid rgba(0,0,0,0.05);
-      margin-top: 50px;
+      margin-top: 40px;
     }
-    footer a { color: var(--text-dark); margin: 0 12px; font-size: 1rem; }
+    footer a { color: var(--text-dark); margin: 0 12px; font-size: 0.95rem; }
     footer a:hover { color: var(--green-accent); }
-    .social-icons { margin-bottom: 12px; }
-    .social-icons i { font-size: 1.5rem; margin: 0 12px; color: var(--green-accent); }
+    .social-icons { margin-bottom: 10px; }
+    .social-icons i { font-size: 1.4rem; margin: 0 12px; color: var(--green-accent); }
     .social-icons i:hover { opacity: 0.7; }
 
-    /* Responsive */
-    @media (max-width: 1200px) { .hero-title { font-size: 3.5rem; } }
-    @media (max-width: 992px) { 
-      .hero-title { font-size: 3rem; } 
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-title { font-size: 3rem; }
       .hero-subtitle { max-width: 100%; }
     }
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.6rem; }
-      .benefit-card i { font-size: 3rem; }
+      .hero-title { font-size: 2.4rem; }
+      .form-row { flex-direction: column; }
     }
-    @media (max-width: 576px) { .hero-title { font-size: 2.2rem; } }
   </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -144,7 +164,7 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- HERO SECTION -->
 <section class="hero-section">
   <div class="container">
     <div class="row align-items-center">
@@ -157,7 +177,7 @@
         </p>
         <a href="#assessment" class="btn hero-btn mt-4">Start Self Assessment</a>
       </div>
-      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
         <div class="hero-card">
           <h3>Evidence-based Foundation</h3>
           <p>WHO • World Bank • International Health Statistics</p>
@@ -168,7 +188,7 @@
   </div>
 </section>
 
-<!-- Benefits Section -->
+<!-- BENEFITS SECTION -->
 <section class="benefits-section">
   <div class="container">
     <div class="row text-center">
@@ -197,7 +217,84 @@
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FORM SECTION -->
+<section id="assessment" class="form-wrapper">
+  <div class="container">
+    <main class="form-container">
+      <h2>Your Self Assessment</h2>
+      <form id="health-form">
+        <div class="form-row">
+          <div class="form-col">
+            <div class="field">
+              <label for="country">Country</label>
+              <input type="text" id="country" required />
+            </div>
+            <div class="field">
+              <label for="age_group">Age Group</label>
+              <select id="age_group" required>
+                <option value="">Please choose</option>
+                <option>18-24</option>
+                <option>25-34</option>
+                <option>35-44</option>
+                <option>45-54</option>
+                <option>55+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sex">Sex</label>
+              <select id="sex" required>
+                <option value="">Please choose</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="height">Height (cm)</label>
+              <input type="number" id="height" required />
+            </div>
+            <div class="field">
+              <label for="weight">Weight (kg)</label>
+              <input type="number" id="weight" required />
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="field">
+              <label>Smoking</label>
+              <label><input type="radio" name="smoking" value="0" required /> No</label>
+              <label><input type="radio" name="smoking" value="1" required /> Yes</label>
+            </div>
+            <div class="field">
+              <label>Do you currently consume alcohol?</label>
+              <label><input type="radio" name="alcohol" value="0" required /> No</label>
+              <label><input type="radio" name="alcohol" value="1" required /> Yes</label>
+            </div>
+            <div class="field">
+              <label>If yes, how many standard drinks per day?</label>
+              <input type="number" name="alcohol_per_day" min="0" step="0.1" placeholder="Drinks/day" />
+            </div>
+            <div class="field">
+              <label>Physical Activity (hours/week)</label>
+              <label><input type="radio" name="activity" value="0-2" required /> 0–2 h</label>
+              <label><input type="radio" name="activity" value="3-5" required /> 3–5 h</label>
+              <label><input type="radio" name="activity" value="6+" required /> 6+ h</label>
+            </div>
+            <div class="field">
+              <label for="life_expectancy">Healthy Life Expectancy (years)</label>
+              <input type="number" id="life_expectancy" required />
+            </div>
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button type="button" id="testReportBtn">Test Report</button>
+          <button type="button" id="fullReportBtn">Full Report</button>
+          <button type="button" id="fillAgainBtn">Fill out again</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="social-icons">
     <a href="#"><i class="fab fa-linkedin"></i></a>
