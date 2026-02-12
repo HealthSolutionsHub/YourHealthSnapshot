@@ -50,35 +50,42 @@
     }
 
     .main-content {
-      min-height: 70vh;
-      padding: 80px 20px;
+      padding: 40px 20px 20px;
       text-align: center;
     }
 
     .main-content h1 {
       font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
 
     .main-content p {
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.6;
       max-width: 700px;
-      margin: 0 auto 20px;
+      margin: 0 auto 25px;
       opacity: 0.9;
     }
 
     main.form-container {
       max-width: 800px;
-      margin: 30px auto;
+      margin: 0 auto 50px;
       background: #fff;
-      padding: 30px;
+      padding: 20px;
       border-radius: 8px;
     }
 
+    main.form-container h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--green-accent);
+    }
+
     .field {
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       text-align: left;
     }
 
@@ -100,7 +107,7 @@
     }
 
     .form-buttons {
-      margin-top: 30px;
+      margin-top: 25px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
@@ -182,17 +189,17 @@
   <div class="container">
     <h1>Welcome to <strong>Your Health Snapshot</strong></h1>
     <p>
-      Take this quick health assessment to discover your key health indicators and get personalized insights.
-      Start with simple calculations like BMI, and explore more detailed results with the premium option.
-      Learn more about the evidence and statistics behind this assessment on our <a href="about.html">About</a> page.
-      This assessment does not replace medical consultation, but helps you find qualified specialists associated
-      with recognized medical societies in your country. Your answers are private and secure.
+      Complete this quick <strong>personalized check</strong> to discover key indicators and get tailored insights.
+      Start with simple calculations like BMI, and access more detailed results with the premium option.
+      Learn more about the evidence and statistics behind this check on our <a href="about.html">About page</a>.
+      This check is not a medical consultation, but helps you find qualified specialists linked to recognized medical societies in your country. Your answers are private and secure.
     </p>
   </div>
 </section>
 
-<!-- FORMULÄR -->
+<!-- SELF ASSESSMENT FORM -->
 <main class="form-container">
+  <h2>Start Your Self Assessment</h2>
   <form id="health-form">
     <div class="field">
       <label for="country">Country</label>
@@ -230,14 +237,12 @@
       <input type="number" id="weight" required />
     </div>
 
-    <!-- Smoking -->
     <div class="field">
       <label>Smoking</label>
       <label><input type="radio" name="smoking" value="0" required /> No</label>
       <label><input type="radio" name="smoking" value="1" required /> Yes</label>
     </div>
 
-    <!-- Alcohol per day (WHO standard) -->
     <div class="field">
       <label>Do you currently consume alcohol? (WHO: current drinker)</label>
       <label><input type="radio" name="alcohol" value="0" required /> No</label>
@@ -249,7 +254,6 @@
       <input type="number" name="alcohol_per_day" min="0" step="0.1" placeholder="Drinks/day" />
     </div>
 
-    <!-- Physical Activity -->
     <div class="field">
       <label>Physical Activity (hours/week)</label>
       <label><input type="radio" name="activity" value="0-2" required /> 0–2 h</label>
